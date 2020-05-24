@@ -68,21 +68,21 @@ function draw() {
 
   //make the ball bounce off the user paddle
   if(ball.isTouching(userPaddle)){
-    //hitSound.play();
+    hitSound.play();
     ball.x = ball.x - 5;
     ball.velocityX = -ball.velocityX;
   }
 
   //make the ball bounce off the computer paddle
   if(ball.isTouching(computerPaddle)){
-    //hitSound.play();
+    hitSound.play();
     ball.x = ball.x + 5;
     ball.velocityX = -ball.velocityX;
   }
 
   //place the ball back in the centre if it crosses the screen
   if(ball.x > 400 || ball.x < 0){
-    //scoreSound.play();
+    scoreSound.play();
 
   if (ball.x < 0) {
       playerScore++;
