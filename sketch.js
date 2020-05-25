@@ -8,7 +8,7 @@ function preload(){
 
 function setup() {
   
-createCanvas(1000,1000);
+createCanvas(200,200);
 
 //create a user paddle sprite
 userPaddle = createSprite(990,500,10,70);
