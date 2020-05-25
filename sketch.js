@@ -29,13 +29,15 @@ function draw() {
   background("white");
   edges = createEdgeSprites();
   //display Scores
-  text(computerScore,470,20);
-  text(playerScore, 530,20);
+   text(computerScore,170,20);
+  text(playerScore, 230,20);
+
 
   //draw dotted lines
-  for (var i = 0; i < 1000; i+=20) {
-     line(500,i,500,i+10);
+  for (var i = 0; i < 400; i+=20) {
+     line(200,i,200,i+10);
   }
+  
 
   if (gameState === "serve") {
     text("Press Space to Serve",150,180);
