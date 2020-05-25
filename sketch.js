@@ -8,16 +8,16 @@ function preload(){
 
 function setup() {
   
-createCanvas(400,400);
+createCanvas(1000,1000);
 
 //create a user paddle sprite
-userPaddle = createSprite(390,200,10,70);
+userPaddle = createSprite(990,500,10,70);
 
 //create a computer paddle sprite
-computerPaddle = createSprite(10,200,10,70);
+computerPaddle = createSprite(10,500,10,70);
 
 //create the pong ball
-ball = createSprite(200,200,12,12);
+ball = createSprite(500,500,12,12);
 
 computerScore = 0;
 playerScore = 0;
@@ -29,12 +29,12 @@ function draw() {
   background("white");
   edges = createEdgeSprites();
   //display Scores
-  text(computerScore,170,20);
-  text(playerScore, 230,20);
+  text(computerScore,470,20);
+  text(playerScore, 530,20);
 
   //draw dotted lines
-  for (var i = 0; i < 400; i+=20) {
-     line(200,i,200,i+10);
+  for (var i = 0; i < 1000; i+=20) {
+     line(500,i,500,i+10);
   }
 
   if (gameState === "serve") {
@@ -46,7 +46,7 @@ function draw() {
     text("Press 'R' to Restart",150,180);
   }
 
-  if (keyDown("r")) {
+  if (keyDown("r")||mousePressedOver(ball)) {
     gameState = "serve";
     computerScore = 0;
     playerScore = 0;
@@ -55,7 +55,7 @@ function draw() {
 
   //give velocity to the ball when the user presses play
   //assign random velocities later for fun
-  if (keyDown("space") && gameState == "serve") {
+  if (keyDown("space") ||mousePressedOver(ball)&& gameState == "serve") {
     ball.velocityX = 5;
     ball.velocityY = 5;
     gameState = "play";
