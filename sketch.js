@@ -8,16 +8,16 @@ function preload(){
 
 function setup() {
   
-createCanvas(200,200);
+createCanvas(400,400);
 
 //create a user paddle sprite
-userPaddle = createSprite(990,500,10,70);
+userPaddle = createSprite(390,500,10,70);
 
 //create a computer paddle sprite
 computerPaddle = createSprite(10,500,10,70);
 
 //create the pong ball
-ball = createSprite(500,500,12,12);
+ball = createSprite(200,200,12,12);
 
 computerScore = 0;
 playerScore = 0;
