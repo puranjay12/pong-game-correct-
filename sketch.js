@@ -106,7 +106,7 @@ function draw() {
   if (ball.isTouching(edges[2]) || ball.isTouching(edges[3])) {
     ball.bounceOff(edges[2]);
     ball.bounceOff(edges[3]);
-    //wall_hitSound.play();
+    wall_hitSound.play();
   }
 
   //add AI to the computer paddle so that it always hits the ball
