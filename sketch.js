@@ -1,4 +1,4 @@
-var userPaddle, computerPaddle, computerScore, playerScore, gameState, ball,scoreSound, wall_hitSound, hitSound;
+var userPaddle, computerPaddle, computerScore, playerScore, gameState, ball,scoreSound, wall_hitSound, hitSound, click;
 
 function preload(){
   scoreSound = loadSound('score.mp3');
@@ -18,6 +18,9 @@ computerPaddle = createSprite(10,500,10,70);
 
 //create the pong ball
 ball = createSprite(200,200,12,12);
+  
+  click = createSprite(200,200,400,400);
+  click.visible = false;
 
 computerScore = 0;
 playerScore = 0;
