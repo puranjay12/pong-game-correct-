@@ -8,18 +8,18 @@ function preload(){
 
 function setup() {
   
-createCanvas(400,400);
+createCanvas(displayWidth,displayHeight);
 
 //create a user paddle sprite
-userPaddle = createSprite(390,500,10,70);
+userPaddle = createSprite(displayWidth-10,displayHeight/2,10,70);
 
 //create a computer paddle sprite
-computerPaddle = createSprite(10,500,10,70);
+computerPaddle = createSprite(0,displayHeight/2,10,70);
 
 //create the pong ball
-ball = createSprite(200,200,12,12);
+ball = createSprite(displayWidth/2,displayHeight/2,12,12);
   
-  click = createSprite(200,200,400,400);
+  click = createSprite(displayWidth/2,displayHeight/2,displayWidth,displayHeight);
   click.visible = false;
 
 computerScore = 0;
@@ -32,23 +32,23 @@ function draw() {
   background("white");
   edges = createEdgeSprites();
   //display Scores
-   text(computerScore,170,20);
-  text(playerScore, 230,20);
+   text(computerScore,displayWidth/2-30,2);
+  text(playerScore, displayWidth/2+30,2);
 
 
   //draw dotted lines
-  for (var i = 0; i < 400; i+=20) {
-     line(200,i,200,i+10);
+  for (var i = 0; i < displayHeight; i+=20) {
+     line(displayWidth/2,i,displayHeight/2,i+10);
   }
   
 
   if (gameState === "serve") {
-    text("Press Space to Serve",150,180);
+    text("Press Space to Serve",displayWidth/2-50,displayHeight/2-20);
   }
 
   if (gameState === "over") {
-    text("Game Over!",170,160);
-    text("Press 'R' to Restart",150,180);
+    text("Game Over!",displayWidth/2-20,displayHeight/2-10);
+    text("Press 'R' to Restart",displayWidth/2,displayHeight/2-20);
   }
 
   if (keyDown("r")||mousePressedOver(click)) {
@@ -96,8 +96,8 @@ function draw() {
       computerScore++;
     }
 
-    ball.x = 200;
-    ball.y = 200;
+    ball.x = displayWidth/2;
+    ball.y =  displayHeight/2;
     ball.velocityX = 0;
     ball.velocityY = 0;
     gameState = "serve";
